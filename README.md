@@ -1,16 +1,76 @@
-# React + Vite
+# StudyPad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tablet kalemi destekli, AI destekli öğrenci not alma uygulaması. PDF ve slaytları görüntülerken el yazısı veya yazılı notlar al, AI ile özetle, flashcard ve çalışma soruları üret.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Aşama 1 — Tamamlandı
+- **Canvas Editörü** — Fabric.js tabanlı; kalem (pointer pressure desteği), highlighter, silgi, metin kutusu, dikdörtgen, elips, ok
+- **Sayfa Şablonları** — Boş, çizgili, kareli, noktalı, Cornell
+- **Undo/Redo** — 50 adım geçmiş (Ctrl+Z / Ctrl+Y)
+- **Otomatik Kayıt** — localStorage'a her 30 saniyede bir
+- **Ders & Sayfa Yönetimi** — Klasörler, renkler, sürükle-bırak sıralama
+- **Etiket Sistemi** — Renk kodlu etiketler
+- **Tema** — Karanlık / açık tema toggle
+- **Görsel Ekleme** — Sürükle-bırak ile canvas'a görsel ekle
+- **PNG Dışa Aktarma** — Canvas'ı PNG olarak indir
 
-## React Compiler
+### Aşama 2 — Planlandı
+- PDF.js entegrasyonu
+- Split-screen modu (PDF + Canvas yan yana, sürüklenebilir ayraç)
+- PDF üzerine doğrudan çizim
+- PDF içi arama, thumbnail şeridi
+- .pptx / .docx → PDF dönüştürme
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Aşama 3 — Planlandı
+- Claude AI entegrasyonu
+- Not özeti (kısa / orta / detaylı)
+- Çalışma soruları üretme
+- Flashcard üretici + flip animasyonu + sınav modu
+- Notlar hakkında sohbet
 
-## Expanding the ESLint configuration
+### Aşama 4 — Planlandı
+- Pomodoro zamanlayıcı
+- Takvim (sınav / ödev tarihleri)
+- İlerleme takibi ve haftalık grafik
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Aşama 5 — Planlandı
+- El yazısı → metin (Tesseract.js OCR)
+- Ses kaydı + otomatik transkript
+- Matematik formülü → LaTeX tanıma
+
+### Aşama 6 — Planlandı
+- XP & seviye sistemi
+- Streak takibi
+- Haftalık lig & leaderboard
+- Sosyal özellikler
+
+## Teknoloji
+
+| Katman | Teknoloji |
+|---|---|
+| Framework | React + Vite |
+| Stil | Tailwind CSS |
+| Canvas | Fabric.js v6 |
+| PDF | PDF.js (Aşama 2) |
+| AI | Claude API (Aşama 3) |
+| Durum Yönetimi | Zustand |
+| Depolama | localStorage / IndexedDB |
+
+## Kurulum
+
+```bash
+npm install
+npm run dev
+```
+
+## Klavye Kısayolları
+
+| Kısayol | Eylem |
+|---|---|
+| `Ctrl+Z` | Geri al |
+| `Ctrl+Y` | İleri al |
+| `Ctrl+S` | Anlık kaydet |
+| `Ctrl+Scroll` | Zoom in/out |
+| `Ctrl+Shift+A` | AI panelini aç/kapat |
+| `Delete` | Seçili nesneyi sil |
